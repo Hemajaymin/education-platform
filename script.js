@@ -1,34 +1,25 @@
-// Function to handle the "Start Now" button
-function startAsking() {
-    alert("AI-powered question answering coming soon!");
-}
+function loginUser() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
-// Example: Function to handle login (you can modify it)
-function login() {
-    let username = prompt("Enter your username:");
-    let password = prompt("Enter your password:");
-    
-    if (username && password) {
-        alert("Login successful! (Feature under development)");
+    if (username === "admin" && password === "1234") {
+        alert("Login Successful!");
+        return true;
     } else {
-        alert("Please enter both username and password.");
+        alert("Invalid Credentials! Try again.");
+        return false;
     }
 }
 
-// Example: Function to show different grade levels
-function showGrades() {
-    let grades = [
-        "Grade 1", "Grade 2", "Grade 3", "Grade 4",
-        "Grade 5", "Grade 6", "Grade 7", "Grade 8",
-        "Grade 9", "Grade 10", "Grade 11", "Grade 12"
+function generateQuiz() {
+    let questions = [
+        "What is the capital of India?",
+        "Solve: 5 + 7",
+        "Who wrote 'Macbeth'?",
+        "What is the chemical symbol for water?",
+        "Solve: 12 × 6"
     ];
     
-    let gradeList = "Available Grades:\n" + grades.join("\n");
-    alert(gradeList);
-}
-
-// Example: Function to fetch AI-generated answers (Future Expansion)
-function getAIAnswer(question) {
-    alert("AI is generating a detailed answer with diagrams...");
-    // You can integrate an API like OpenAI here for real AI answers.
+    let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    document.getElementById("quiz-output").innerText = "Quiz Question: " + randomQuestion;
 }
